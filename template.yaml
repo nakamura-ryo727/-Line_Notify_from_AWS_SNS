@@ -5,7 +5,7 @@ Parameters:
     Type: String
   SNSTopic:
     Type: String
-  LINE_NOTIFY_TOKEN:
+  LINENOTIFYTOKEN:
     Type: String
 Resources:
   Function:
@@ -16,7 +16,7 @@ Resources:
       Tracing: 'PassThrough' # or Active
       Environment:
         Variables:
-          LINE_NOTIFY_TOKEN: !Ref LINE_NOTIFY_TOKEN
+          LINE_NOTIFY_TOKEN: !Ref LINENOTIFYTOKEN
       # main と指定すると fork/exec /var/task/main: permission denied: PathError
       CodeUri: '.'
       FunctionName: !Ref FunctionName
